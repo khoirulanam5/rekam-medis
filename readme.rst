@@ -1,71 +1,173 @@
-###################
-What is CodeIgniter
-###################
+# 🏥 Sistem Rekam Medis dengan Metode CRM (Customer Relationship Management)
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
+Sistem rekam medis digital yang dilengkapi dengan pendekatan **CRM (Customer Relationship Management)** untuk meningkatkan kualitas pelayanan terhadap pasien. Sistem ini mendukung multi-role, pengelolaan data medis lengkap, serta tracking riwayat pelayanan pasien.
 
-*******************
-Release Information
-*******************
+---
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+## 🚀 Teknologi yang Digunakan
 
-**************************
-Changelog and New Features
-**************************
+* **Backend:** CodeIgniter 3
+* **Database:** MySQL
+* **Frontend:** HTML, CSS, JavaScript, Bootstrap
+* **Metode:** Customer Relationship Management (CRM)
 
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+---
 
-*******************
-Server Requirements
-*******************
+## 👥 Role Pengguna
 
-PHP version 5.6 or newer is recommended.
+### 1. **Resepsionis**
 
-It should work on 5.4.8 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
+* Registrasi pasien
+* Input data kunjungan
+* Pengaturan jadwal konsultasi
 
-************
-Installation
-************
+### 2. **Dokter**
 
-Please see the `installation section <https://codeigniter.com/userguide3/installation/index.html>`_
-of the CodeIgniter User Guide.
+* Melihat daftar pasien
+* Menginput diagnosa
+* Rekam medis lengkap
+* Resep obat
 
-*******
-License
-*******
+### 3. **Apoteker**
 
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
+* Melihat resep dari dokter
+* Menyerahkan obat ke pasien
+* Update stok obat
 
-*********
-Resources
-*********
+### 4. **Asisten Dokter (Asdok)**
 
--  `User Guide <https://codeigniter.com/docs>`_
--  `Contributing Guide <https://github.com/bcit-ci/CodeIgniter/blob/develop/contributing.md>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <https://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community Slack Channel <https://codeigniterchat.slack.com>`_
+* Membantu input pemeriksaan awal
+* Manajemen data layanan
 
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
+### 5. **Pasien**
 
-***************
-Acknowledgement
-***************
+* Melihat riwayat kunjungan
+* Informasi obat & resep
+* Informasi jadwal konsultasi
 
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
+---
+
+## 🧩 Fitur Utama
+
+### 📋 **Manajemen Pasien**
+
+* Registrasi & data lengkap pasien
+* Nomor rekam medis otomatis
+
+### 🩺 **Rekam Medis Lengkap**
+
+* Data diagnosa
+* Tindakan
+* Resep obat
+* Riwayat penyakit
+
+### 💊 **Manajemen Obat**
+
+* Stok obat
+* Resep dari dokter
+* Pengambilan obat oleh apoteker
+
+### 📅 **Jadwal Konsultasi**
+
+* Penjadwalan dokter
+* Notifikasi ke pasien (opsional)
+
+### 🤝 **CRM — Customer Relationship Management**
+
+* Pemantauan kepuasan pasien
+* Histori pelayanan
+* Segmentasi pasien
+* Pelacakan kebutuhan layanan berkala
+
+### 📊 **Laporan**
+
+* Laporan kunjungan
+* Laporan obat masuk/keluar
+* Laporan tindakan
+* Laporan resep
+
+---
+
+## 📂 Struktur Direktori
+
+```
+rekam-medis-crm/
+├── application/
+│   ├── controllers/
+│   ├── models/
+│   ├── views/
+│   ├── config/
+│   └── libraries/
+├── assets/
+│   ├── css/
+│   ├── js/
+│   └── img/
+├── system/
+└── database.sql
+```
+
+---
+
+## 🛠️ Instalasi & Setup
+
+### 1. Clone Repository
+
+```
+git clone https://github.com/username/rekam-medis-crm.git
+```
+
+### 2. Import Database
+
+* Buat database baru
+* Import `database.sql`
+
+### 3. Konfigurasi CodeIgniter
+
+Ubah `application/config/config.php`:
+
+```
+$config['base_url'] = 'http://localhost/rekam-medis-crm/';
+```
+
+Ubah `application/config/database.php`:
+
+```
+'hostname' => 'localhost',
+'username' => 'root',
+'password' => '',
+'database' => 'rekam_medis',
+```
+
+### 4. Jalankan Project
+
+Akses di browser:
+
+```
+http://localhost/rekam-medis-crm/
+```
+
+---
+
+## 🔐 Login Default (opsional)
+
+```
+Resepsionis : resepsionis / 12345
+Dokter      : dokter / 12345
+Apoteker    : apoteker / 12345
+Asdok       : asdok / 12345
+Pasien      : pasien / 12345
+```
+
+---
+
+## 📝 Lisensi
+
+Private / Open Source — sesuaikan kebutuhan.
+
+---
+
+## 💬 Kontak
+
+Hubungi developer untuk pengembangan modul tambahan.
+
+---
