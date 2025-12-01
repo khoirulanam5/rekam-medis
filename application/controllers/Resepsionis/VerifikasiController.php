@@ -31,12 +31,12 @@ class VerifikasiController extends CI_Controller
         $pasien = $this->Pasien->getById($id)->row();
         $this->Pasien->setujui($id);
         //
-        $userkey = 'a859631d94df';
-        $passkey = '3f109df052a53eaa3237060a';
+        $userkey = $this->config->item('userkey');
+        $passkey = $this->config->item('passkey');
+        $url     = $this->config->item('url');
         $telpon = $pasien->no_hp;
         $message = 'Hallo ' . $pasien->nama . ', Pendaftaran anda telah disetujui, silahkan login ke aplikasi untuk mengambil antrian anda.'. PHP_EOL;
         $message .= 'Hormat Kami, Klinik Pratama Ben Mari Juwana';
-        $url = 'https://console.zenziva.net/wareguler/api/sendWA/';
         $curlHandle = curl_init();
         curl_setopt($curlHandle, CURLOPT_URL, $url);
         curl_setopt($curlHandle, CURLOPT_HEADER, 0);
